@@ -22,13 +22,11 @@ public class ServiceTest {
 	
 	@Test
 	public void retrieveAccount() {
-		//service.addAccount(firstName, lastName, 1234123412341234L);
 		assertEquals("Account was not found", true, service.checkForAccount(0)); 
 	}
 	
 	@Test
 	public void removeAccount() {
-		//service.addAccount(firstName, lastName, 1234123412341234L);
 		assertEquals("Account was not removed", true, service.removeAccount(11)); 
 	}
 	
