@@ -13,5 +13,4 @@ public class MainTest {
 		assertEquals("Output not the one expected", "Hello world!", Main.getOutput());
 	}
 	
-
 }
