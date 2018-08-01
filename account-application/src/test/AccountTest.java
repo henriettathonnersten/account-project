@@ -28,7 +28,7 @@ public class AccountTest {
 	}
 	
 	@Test
-	public void getLastName() {
+	public void getLastName() { 
 		assertEquals("Not the expected last name", "Nameson", account.getLastName());
 	}
 	
@@ -51,7 +51,8 @@ public class AccountTest {
 	
 	@Test 
 	public void checkOutput() {
-		assertEquals("Output not the on expected", "Account holder: Name Nameson. Account number: 1234123412341234.", account.outputAccountDetails());
+		assertEquals("Output not the on expected", "Account holder: Name Nameson. Account number: 1234123412341234.", 
+				account.outputAccountDetails());
 	}
 	
 }

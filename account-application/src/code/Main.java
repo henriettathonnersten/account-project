@@ -3,13 +3,9 @@ package code;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println(getOutput());
+		Service service = new Service();
+		System.out.println(service.getJSON());
 	}
-	
-	public static String getOutput() {
-		return "Hello world!";
-	}
-	
-	
+
 
 }
