@@ -25,7 +25,7 @@ public class ServiceTest {
 	@Test
 	public void retrieveAccount() {
 		service.addAccount(firstName, lastName, 1234123412341234L);
-		assertEquals("Account was not found", true, service.checkForAccount(0)); // output fran accountobjekt ?
+		assertEquals("Account was not found", true, service.checkForAccount(0)); 
 	}
 	
 	@Test
