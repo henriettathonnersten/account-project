@@ -8,8 +8,8 @@ import org.json.JSONObject;
 public class Service {
 	
 	public Service() {
-		addAccount("Name1", "Namesson1", 12345612345611L);
-		addAccount("Name2", "Namesson2", 12345612345612L);
+		addAccount("Gary", "Namesson1", 12345612345611L);
+		addAccount("Gary", "Namesson2", 12345612345612L);
 		addAccount("Name3", "Namesson3", 12345612345613L);
 	}
 	
@@ -43,7 +43,19 @@ public class Service {
 		JSONObject json = new JSONObject(accountHashMap);			
 		String jsonPrint = json.toString();
 		return jsonPrint;
-
+	}
+	
+	public String getMostCommonFirstName(String name) {
+		int counter = 0;
+		
+		for (Map.Entry<Integer, Object> accounts : accountHashMap.entrySet())
+		{
+			Account account = (Account) accounts.getValue();
+		    if (account.getFirstName() == name)
+		    	counter++;
+		}
+		
+		return "There are " + counter + " " + name + "'s.";
 	}
 	
 }

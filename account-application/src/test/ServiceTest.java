@@ -17,8 +17,7 @@ public class ServiceTest {
 	
 	@Test
 	public void addAccount() {
-		//return 1, as that is the next available ID.
-		assertEquals("Account was not added", 16, service.addAccount("Name", "Nameson", 1234123412341234L)); 
+		assertEquals("Account was not added", 19, service.addAccount("Name", "Nameson", 1234123412341234L)); 
 	}
 	
 	@Test
@@ -35,9 +34,14 @@ public class ServiceTest {
 	
 	@Test
 	public void getJSON() {
-		assertEquals("Output not expected", "{\"0\":{\"firstName\":\"Name1\",\"lastName\":\"Namesson1\",\"accountNumber\":12345612345611}," 
-				+ "\"1\":{\"firstName\":\"Name2\",\"lastName\":\"Namesson2\",\"accountNumber\":12345612345612},\"" 
-				+ "2\":{\"firstName\":\"Name3\",\"lastName\":\"Namesson3\",\"accountNumber\":12345612345613}}", service.getJSON());
+		assertEquals("Output not expected", "{\"8\":{\"firstName\":\"Gary\",\"lastName\":\"Namesson1\",\"accountNumber\":12345612345611}," 
+				+ "\"6\":{\"firstName\":\"Gary\",\"lastName\":\"Namesson2\",\"accountNumber\":12345612345612},\"" 
+				+ "7\":{\"firstName\":\"Name3\",\"lastName\":\"Namesson2\",\"accountNumber\":12345612345613}}", service.getJSON());
+	}
+	
+	@Test
+	public void getFirstName() {
+		assertEquals("Name not found", "There are 2 Gary's.", service.getMostCommonFirstName("Gary"));
 	}
 	
 }
