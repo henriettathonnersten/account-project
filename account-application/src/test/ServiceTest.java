@@ -9,7 +9,8 @@ import code.Service;
 public class ServiceTest {
 
 	Service service = new Service();
-	//map
+	String firstName = "Name";
+	String lastName = "Nameson";
 	
 	@Test
 	public void existanceCheck() {
@@ -18,18 +19,18 @@ public class ServiceTest {
 	
 	@Test
 	public void addAccount() {
-		assertEquals("Account was not added", 1, service.addAccount("Name", "Nameson", 1234123412341234L)); 
+		assertEquals("Account was not added", 1, service.addAccount(firstName, lastName, 1234123412341234L)); 
 	}
 	
 	@Test
 	public void retrieveAccount() {
-		service.addAccount("Name", "Nameson", 1234123412341234L);
+		service.addAccount(firstName, lastName, 1234123412341234L);
 		assertEquals("Account was not found", true, service.checkForAccount(0)); // output fran accountobjekt ?
 	}
 	
 	@Test
 	public void removeAccount() {
-		service.addAccount("Name", "Nameson", 1234123412341234L);
+		service.addAccount(firstName, lastName, 1234123412341234L);
 		assertEquals("Account was not removed", true, service.removeAccount(0)); 
 	}
 	

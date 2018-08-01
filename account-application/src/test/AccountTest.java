@@ -40,13 +40,13 @@ public class AccountTest {
 	
 	@Test
 	public void getAccountNumber() {
-		assertEquals("Not the expected last name", 1234123412341234L, account.getAccountNumber());
+		assertEquals("Not the expected account number", 1234123412341234L, account.getAccountNumber());
 	}
 	
 	@Test
 	public void setAccountNumber() {
 		account.setAccountNumber(4321432143214321L);
-		assertEquals("Not the expected last name", 4321432143214321L, account.getAccountNumber());
+		assertEquals("Not the expected account number name", 4321432143214321L, account.getAccountNumber());
 	}
 	
 	@Test 

@@ -6,7 +6,7 @@ public class Main {
 		System.out.println(getOutput());
 	}
 	
-	static public String getOutput() {
+	public static String getOutput() {
 		return "Hello world!";
 	}
 	
