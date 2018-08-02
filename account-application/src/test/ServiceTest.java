@@ -1,16 +1,12 @@
 package test;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
 import code.Service;
 
 public class ServiceTest {
 
 	Service service = new Service();
-	String firstName = "Name";
-	String lastName = "Nameson";
 	
 	@Test
 	public void existanceCheck() {
@@ -19,19 +15,29 @@ public class ServiceTest {
 	
 	@Test
 	public void addAccount() {
-		assertEquals("Account was not added", 1, service.addAccount(firstName, lastName, 1234123412341234L)); 
+		assertEquals("Account was not added", 19, service.addAccount("Name", "Nameson", 1234123412341234L)); 
 	}
 	
 	@Test
 	public void retrieveAccount() {
-		service.addAccount(firstName, lastName, 1234123412341234L);
 		assertEquals("Account was not found", true, service.checkForAccount(0)); 
 	}
 	
 	@Test
 	public void removeAccount() {
-		service.addAccount(firstName, lastName, 1234123412341234L);
-		assertEquals("Account was not removed", true, service.removeAccount(0)); 
+		assertEquals("Account was not removed", true, service.removeAccount(11)); 
+	}
+	
+	@Test
+	public void getJSON() {
+		assertEquals("Output not expected", "{\"8\":{\"firstName\":\"Gary\",\"lastName\":\"Namesson1\",\"accountNumber\":12345612345611}," 
+				+ "\"6\":{\"firstName\":\"Gary\",\"lastName\":\"Namesson2\",\"accountNumber\":12345612345612},\"" 
+				+ "7\":{\"firstName\":\"Name3\",\"lastName\":\"Namesson2\",\"accountNumber\":12345612345613}}", service.getJSON());
+	}
+	
+	@Test
+	public void getFirstName() {
+		assertEquals("Name not found", "There are 2 Gary's.", service.getMostCommonFirstName("Gary"));
 	}
 	
 }
