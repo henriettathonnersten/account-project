@@ -13,12 +13,12 @@ public class Service {
 		addAccount("Name3", "Namesson3", 12345612345613L);
 	}
 	
-	private HashMap<Integer, Object> accountHashMap = new HashMap<Integer, Object>();
+	private HashMap<Integer, Object> accountHashMap = new HashMap<>();
 	private static int accountID = 0;
 		
 	public int addAccount(String firstName, String lastName, long accountNumber) { 
 		accountHashMap.put(accountID, new Account (firstName, lastName, accountNumber));
-		accountID++;		
+		updateAccountID();		
 		return accountID;
 	}
 	
@@ -41,8 +41,7 @@ public class Service {
 	
 	public String getJSON() {
 		JSONObject json = new JSONObject(accountHashMap);			
-		String jsonPrint = json.toString();
-		return jsonPrint;
+		return json.toString();
 	}
 	
 	public String getMostCommonFirstName(String name) {
@@ -57,5 +56,10 @@ public class Service {
 		
 		return "There are " + counter + " " + name + "'s.";
 	}
+	
+	public static void updateAccountID() {
+		accountID++;
+	} 
+	
 	
 }
